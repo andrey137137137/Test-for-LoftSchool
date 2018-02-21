@@ -1,0 +1,42 @@
+// #reasanik
+// {
+  @mixin fontFace($font, $style, $folder: $mainFolder)
+  {
+    $str: '#{$folder}/#{$font}-#{$style}/#{$font}-#{$style}';
+    // $str: '#{$folder}/#{$font}-#{$style}';
+
+    @font-face {
+      font-family: e('#{$font}#{$style}');
+      src: url('#{$str}.eot');
+      src: /* local('Fira Sans'), */
+           url('#{$str}.ttf') format('truetype'),
+           url('#{$str}.svg##{$font}-#{$style}') format('svg'),
+           url('#{$str}.woff2') format('woff2'),
+           url('#{$str}.woff') format('woff'),
+           url('#{$str}.eot?#iefix') format('embedded-opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+  }
+
+  @mixin fontFamily($font: $mainFont)
+  {
+    font-family: $font, $reserveFonts;
+  }
+
+  @mixin box-shadow($size, $blur, $color)
+  {
+    $halfSize: round($size/2);
+    $halfBlur: round($blur/2);
+
+    box-shadow: -$size $size $blur $blackShadow,
+      -$size -$size $blur $blackShadow,
+      $size -$size $blur $blackShadow,
+      $size $size $blur $blackShadow,
+      0 $halfSize $halfBlur $blackShadow,
+      -$halfSize 0 $halfBlur $blackShadow,
+      0 -$halfSize $halfBlur $blackShadow,
+      $halfSize 0 $halfBlur $blackShadow;
+  }
+
+// }

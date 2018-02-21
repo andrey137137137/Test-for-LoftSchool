@@ -1,0 +1,163 @@
+doctype html
+html
+head
+  meta(charset="UTF-8")
+  title Loft School Test
+
+  link(rel="stylesheet" href="app/css/style.min.css")
+
+  script(src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js")
+
+body
+
+  header.header
+
+    div.author
+      div.image-wrap.logo-wrap
+        img(src="img/logo.jpg" alt="Логотип")
+      div
+        h2 Быстров Борис Викторович
+        a(href="#") bystrov@gmail.coma
+
+    div.socials
+      a.github(href="#") github
+      a.skype(href="#") skype
+      a.vk(href="#") vk
+
+  section.about-study
+    div.container
+
+      h2 О будущем ученике
+      p.sub-header Ребятам из Loftschool будет полезно узнать немного обо мне
+
+      article.about-me
+        h3 Немного обо мне
+        p Я живу в Санкт-Петербурге (Россия). Мне 26 лет. Высшее образование - закончил НИУ ИТМО. Опыт в разработке 1 год. Уже окончил курсы в Академии Программирования, где не плохо научился верстать. Пока есть только один сайт, которым могу похвастаться:
+          a(href="#") www.yandex.ru
+
+      article.my-experience
+        h3 Мой опыт в разработке
+        p В этом блоке я расскажу о себе, что я уже умею. Здесь я укажу другие курсы, которые до этого я уже проходил. Могу перечислить технологии, которыми уже умею пользоваться. К примеру: html5, css3, sass, jade, git и пр.
+
+  section.courses
+    div#courses.container
+
+      - titles = ["Основы JavaScript", "JQUERY", "Базовые элементы страницы", "Создание адаптивных сайтов", "Верстка адаптивной css галереи", "Верстка адаптивной css галереи"]
+      each item in titles
+        h3= item
+    //-   h1 Курсы на loftblog
+    //-   p.sub-header которые мне помогут в выполнении этого задания
+
+    //-   article.course
+    //-     div.image-wrap
+    //-       img(src="img/courses/1.jpg" alt="Основы JavaScript")
+    //-     div.text-wrap
+    //-       h3 Основы JavaScript
+    //-       p Видеокурс о одном из самых популярных языков программирования - JavaScript. Изучая этот курс вы познаете этот прекрасный язык от самых основ.
+    //-       div.course-time 24 урока (6 часов 46 минут)
+    //-     div.checkbox-wrap
+    //-       input#checkbox-1(type="checkbox" value="1")
+    //-       label.sprite-checker(for="checkbox-1")
+    //-         Посмотрел
+    //-     div.foreground
+
+    //-   article.course"
+    //-     div.image-wrap"
+    //-       img src="img/courses/2.jpg" alt="Основы JQUERY"
+    //-     div
+    //-     div.text-wrap"
+    //-       h3Основы JQUERY
+    //-       pВидеокурс о одном из самых популярных языков программирования - JavaScript. Изучая этот курс вы познаете этот прекрасный язык от самых основ.p
+    //-       div.course-time"11 уроков (2 часа 6 минут)div
+    //-     div
+    //-     div.checkbox-wrap"
+    //-       input#checkbox-2" type="checkbox" value="2"
+    //-       label for="checkbox-2".sprite-checker"
+    //-         Посмотрел
+    //-       label
+    //-     div
+    //-     div.foreground"div
+    //-   article
+
+    //-   article.course"
+    //-     div.image-wrap"
+    //-       img src="img/courses/3.jpg" alt="Базовые элементы страницы"
+    //-     div
+    //-     div.text-wrap"
+    //-       h3 Базовые элементы страницы
+    //-       pВидеокурс по верстке и программированию основных и популярных элементов сайтов. Посмотрев этот курс вы научитесь создавать табы, аккордеон, слайдшоу, слайдер и т.д.p
+    //-       div.course-time"9 уроков (2 часа 7 минут)div
+    //-     div
+    //-     div.checkbox-wrap"
+    //-       input#checkbox-3" type="checkbox" value="3"
+    //-       label for="checkbox-3".sprite-checker"
+    //-         Посмотрел
+    //-       label
+    //-     div
+    //-     div.foreground"div
+    //-   article
+
+    //-   article.course"
+    //-     div.image-wrap"
+    //-       img src="img/courses/4.jpg" alt="Создание адаптивных сайтов"
+    //-     div
+    //-     div.text-wrap"
+    //-       h3 Создание адаптивных сайтов
+    //-       pВ этом курсе вы узнаете как создавать адаптивные сайты, что такое адаптивная верстка и дизайн.p
+    //-       div.course-time"7 уроков (2 часа 11 минут)div
+    //-     div
+    //-     div.checkbox-wrap"
+    //-       input#checkbox-4" type="checkbox" value="4"
+    //-       label for="checkbox-4".sprite-checker"
+    //-         Посмотрел
+    //-       label
+    //-     div
+    //-     div.foreground"div
+    //-   article
+
+    //-   article.course"
+    //-     div.image-wrap"
+    //-       img src="img/courses/5.jpg" alt="Верстка адаптивной css галереи"
+    //-     div
+    //-     div.text-wrap"
+    //-       h3 Верстка адаптивной css галереи
+    //-       pВ этом видеокурсе вы изучите инструменты, техники и подходы для web-разработчика, которые помогут вам решать поставленные задачи более быстро и эффективно.p
+    //-       div.course-time"6 уроков (1 час 9 минут)div
+    //-     div
+    //-     div.checkbox-wrap"
+    //-       input#checkbox-5" type="checkbox" value="5"
+    //-       label for="checkbox-5".sprite-checker"
+    //-         Посмотрел
+    //-       label
+    //-     div
+    //-     div.foreground"div
+    //-   article
+
+    //-   article.course"
+    //-     div.image-wrap"
+    //-       img src="img/courses/6.jpg" alt="Верстка адаптивной css галереи"
+    //-     div
+    //-     div.text-wrap"
+    //-       h3 Верстка адаптивной css галереи
+    //-       pВ этом курсе мы разберем как сверстать адаптивную css галерею. Также познакомимся с Flexbox.p
+    //-       div.course-time"4 урока (50 минут)div
+    //-     div
+    //-     div.checkbox-wrap"
+    //-       input#checkbox-6" type="checkbox" value="6"
+    //-       label for="checkbox-6".sprite-checker"
+    //-         Посмотрел
+    //-       label
+    //-     div
+    //-     div.foreground"div
+    //-   article
+
+    //- div
+
+    h2#learned.container &nbsp;Задание выполнено
+
+  footer
+    p А это футер, с текстом внутри. Он должен быть прибит к низу окна браузера,
+    p не зависимо от количества контента на странице и размера окна.
+
+  script(src="js/jquery-3.1.1.min.js")
+  script(src="js/script.js")

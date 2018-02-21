@@ -1,0 +1,39 @@
+// @import 'variables';
+
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,500,500i,700,700i&subset=cyrillic,cyrillic-ext');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i&subset=cyrillic,cyrillic-ext');
+
+@font-face {
+  font-family: FontAwesome;
+  src: url('#{$fontAwesome}.eot?v=4.7.0');
+  src: url('#{$fontAwesome}.eot?#iefix&v=4.7.0') format('embedded-opentype'),
+       url('#{$fontAwesome}.woff2?v=4.7.0') format('woff2'),
+       url('#{$fontAwesome}.woff?v=4.7.0') format('woff'),
+       url('#{$fontAwesome}.ttf?v=4.7.0') format('truetype'),
+       url('#{$fontAwesome}.svg?v=4.7.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// @font-face {
+//     font-family: 'Fira Sans';
+//     src: local('Fira Sans Light'), local('FiraSans-Light'), url('#{$mainFolder}/Firasanslight.woff2') format('woff2'), url('#{$mainFolder}/Firasanslight.woff') format('woff'), url('#{$mainFolder}/Firasanslight.ttf') format('truetype');
+//     font-weight: 200;
+//     font-style: normal;
+// }
+
+// @font-face {
+//     font-family: 'Fira Sans';
+//     src: local('Fira Sans Medium'), local('FiraSans-Medium'), url('#{$mainFolder}/Firasansmedium.woff2') format('woff2'), url('#{$mainFolder}/Firasansmedium.woff') format('woff'), url('#{$mainFolder}/Firasansmedium.ttf') format('truetype');
+//     font-weight: 500;
+//     font-style: normal;
+// }
+// .fontFace('FiraSans', 'Bold');
+// .fontFace('FiraSans', 'BoldItalic');
+// .fontFace('FiraSans', 'Italic');
+// .fontFace('FiraSans', 'Light');
+// .fontFace('FiraSans', 'Medium');
+// .fontFace('FiraSans', 'MediumItalic');
+// .fontFace('FiraSans', 'Regular');
+// .fontFace('FiraSans', 'LightItalic');
+// .fontFace('OpenSans', 'Light');
