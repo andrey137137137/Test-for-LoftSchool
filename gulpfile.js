@@ -47,17 +47,18 @@ gulp.task('html', function () {
 
   gulp.src('index.jade')
   .pipe(jade({
-    locals: YOUR_LOCALS
+    locals: YOUR_LOCALS,
+    pretty: true
   }))
   .pipe(gulp.dest('app'));
   // .pipe(connect.reload());
 });
 
-// gulp.task('watch', function () {
-//   gulp.watch('scss/*.scss', ['css']);
-//   gulp.watch('index.jade', ['html']);
-// });
+gulp.task('watch', function () {
+  gulp.watch('scss/*.scss', ['css']);
+  gulp.watch('index.jade', ['html']);
+});
 
 // gulp.task('default', ['connect', 'html', 'css', 'watch']);
-// gulp.task('default', ['html', 'css', 'watch']);
-gulp.task('default', ['html', 'css']);
+gulp.task('default', ['html', 'css', 'watch']);
+// gulp.task('default', ['html', 'css']);
