@@ -36,7 +36,7 @@ gulp.task('css', function () {
       browsers: ['last 15 versions'],
       cascade: false
   }))
-  .pipe(minifyCSS())
+  // .pipe(minifyCSS())
   .pipe(rename("style.min.css"))
   .pipe(gulp.dest('app/css'));
   // .pipe(connect.reload());
