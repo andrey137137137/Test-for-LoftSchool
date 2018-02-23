@@ -2,15 +2,17 @@
 @import 'mixins';
 @import 'fonts';
 @import "normalize/import-now";
+@import "columns";
 
 * {
   margin: 0;
+  border-style: none;
   padding: 0;
   box-sizing: border-box;
 }
 
 body,
-header,
+.header,
 .container {
   min-width: 960px;
 }
@@ -89,25 +91,27 @@ body {
     font-weight: 200;
   }
 
-  .image_wrap
+  .img_wrap
   {
     overflow: hidden;
+    background-color: $lightBlack;
 
     &__img {
-      width: auto;
+      width: 100%;
       max-width: 100%;
-      background-color: $lightBlack;
+      height: auto;
+      color: $white;
     }
   }
 
-  .link
+  a
   {
     &,
     &:visited,
     &:link,
     &:hover {
-      color: inherit;
       text-decoration: none;
+      color: inherit;
     }
 
     & {
@@ -159,41 +163,47 @@ body {
       }
     }
 
+    ul {
+      list-style: none inside;
+    }
+
     .socials
     {
       font: 35px/1 FontAwesome;
       // float: right;
       padding-top: 12px;
 
-      &__link
-      {
+      &__item {
         float: left;
-        display: block;
         margin-left: 20px;
-        width: 30px;
-        height: 35px;
-        overflow: hidden;
       }
 
-      &__github:before {
-        content: '\f09b';
-      }
-
-      &__skype:before {
-        content: '\f17e';
-      }
-
-      &__vk
-      {
-        width: 38px;
-
-        &:before {
-            content: '\f189';
+        &__link {
+          display: block;
+          width: 30px;
+          height: 35px;
+          overflow: hidden;
         }
-      }
+
+        &__github:before {
+          content: '\f09b';
+        }
+
+        &__skype:before {
+          content: '\f17e';
+        }
+
+        &__vk
+        {
+          width: 38px;
+
+          &:before {
+            content: '\f189';
+          }
+        }
     }
 
-  // section {
+  // .section {
   //   padding-top: 70px;
   // }
 
@@ -223,45 +233,46 @@ body {
       }
     }
 
-  .about_study
+  .about
   {
     padding: 70px 0 96px;
     // height: 473px;
     background-color: $white;
-  }
 
-    h2 {
+    &__title {
       position: relative;
       top: 0;
       text-align: center;
       color: $lightBlack;
     }
 
-    .sub-header {
+    &__desc {
       margin-top: 14px;
     }
+  }
 
-    article {
+    .study_card
+    {
       margin-top: 37px;
       padding-left: 160px;
       width: 460px;
-    }
 
-    .about-me {
-      background: url(../img/bg/about-study/1.png) no-repeat;
-    }
+      &-about_me {
+        background: url(../img/bg/about-study/1.png) no-repeat;
+      }
 
-    .my-experience {
-      background: url(../img/bg/about-study/2.png) no-repeat;
-    }
+      &-my_experience {
+        background: url(../img/bg/about-study/2.png) no-repeat;
+      }
 
-    // h3 {
-    //   margin-bottom: 8px;
-    // }
+      // &__title {
+      //   margin-bottom: 8px;
+      // }
 
-    a {
-      text-decoration: underline;
-      color: #03a9f4;
+      &__link {
+        text-decoration: underline;
+        color: #03a9f4;
+      }
     }
 
   .courses
@@ -270,138 +281,140 @@ body {
     // height: 1239px;
     // background: #f4f5f2 url(../img/bg/courses.png);
 
-    .sub-header {
+    &__desc {
       margin: 13px 0 20px;
     }
   }
 
-    .hidden {
-      display: none;
-    }
+    // .hidden {
+    //   display: none;
+    // }
 
-      .course
-      {
-        position: relative;
-        margin-top: 23px;
-        width: 300px;
-        background-color: $white;
-        box-shadow: 0 1px 5px $shadow;
-        overflow: hidden;
-        // cursor: pointer;
+    .course
+    {
+      position: relative;
+      margin-top: 23px;
+      width: 300px;
+      background-color: $white;
+      box-shadow: 0 1px 5px $shadow;
+      overflow: hidden;
+      // cursor: pointer;
 
-        &:nth-child(3n) {
-          clear: left;
+      $course: &;
+
+      &:nth-child(3n) {
+        clear: left;
+      }
+
+      &__time,
+      &__sprite_checker {
+        background-image: url(../img/bg/sprite.png);
+        background-repeat: no-repeat;
+      }
+
+      &__img_wrap {
+        height: 170px;
+      }
+
+      &__text_wrap {
+        padding: 18px 21px 15px;
+      }
+
+      &__title {
+        line-height: 24px;
+        transition: color .5s;
+      }
+
+      // &__desc {
+      //   margin-bottom: 8px;
+      // }
+
+      &__course_time {
+        margin-top: 10px;
+        margin-left: -1px;
+        padding-left: 16px;
+        color: #b6b6b6;
+        background-position: -2px -47px;
+      }
+
+      &__checkbox_wrap {
+        display: block;
+        padding: 20px 20px 19px;
+        height: 59px;
+        background-color: #f5f5f5;
+      }
+
+        &__input {
+          display: none;
         }
 
-        .course-time,
-        label {
-          background-image: url(../img/bg/sprite.png);
-          background-repeat: no-repeat;
-        }
-
-        .image-wrap {
-          height: 170px;
-        }
-
-        .text-wrap {
-          padding: 18px 21px 15px;
-        }
-
-        h3 {
-          line-height: 24px;
-          transition: color .5s;
-        }
-
-        // p {
-        //   margin-bottom: 8px;
-        // }
-
-        .course-time {
-          margin-top: 10px;
-          margin-left: -1px;
-          padding-left: 16px;
-          color: #b6b6b6;
-          background-position: -2px -47px;
-        }
-
-        .checkbox-wrap {
+        &__sprite_checker {
           display: block;
-          padding: 20px 20px 19px;
-          height: 59px;
-          background-color: #f5f5f5;
-        }
-
-          input {
-            display: none;
-          }
-
-          label {
-            display: block;
-            padding-top: 1px;
-            padding-left: 39px;
-            height: 20px;
-            font-size: 18px;
-            font-weight: 400;
-            line-height: 20px;
-            background-position: -2px -2px;
-            cursor: pointer;
-            transition: all .5s;
-          }
-
-          input:checked + label {
-            color: $green;
-            background-position: -2px -26px;
-          }
-
-        .foreground {
-          position: absolute;
-          top: 165px;
-          left: -100%;
-          width: 100%;
-          height: 5px;
-          background-color: $green;
+          padding-top: 1px;
+          padding-left: 39px;
+          height: 20px;
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 20px;
+          background-position: -2px -2px;
+          cursor: pointer;
           transition: all .5s;
         }
 
-        &.active
-        {
-          h3 {
-            color: $green;
-          }
-
-          .foreground {
-            left: 0;
-          }
+        &__input:checked + &__sprite_checker {
+          color: $green;
+          background-position: -2px -26px;
         }
 
-        &.learned
-        {
-          box-shadow: 0 0 0 #000;
+      &__foreground {
+        position: absolute;
+        top: 165px;
+        left: -100%;
+        width: 100%;
+        height: 5px;
+        background-color: $green;
+        transition: all .5s;
+      }
 
-          .foreground {
-            top: 0;
-            left: 0;
-            height: 100%;
-            opacity: .2;
-          }
+      &-active
+      {
+        #{$course}__title {
+          color: $green;
+        }
+
+        #{$course}__foreground {
+          left: 0;
         }
       }
 
-    #learned
-    {
-      display: none;
-      padding-top: 511px;
-      height: 1084px;
-      color: $green;
+      &-learned
+      {
+        box-shadow: 0 0 0 #000;
 
-      &:before {
-        font-family: FontAwesome;
-        font-size: 35px;
-        content: '\f00c';
+        #{$course}__foreground {
+          top: 0;
+          left: 0;
+          height: 100%;
+          opacity: .2;
+        }
       }
     }
 
-  footer {
+  #learned
+  {
+    display: none;
+    padding-top: 511px;
+    height: 1084px;
+    color: $green;
+
+    &:before {
+      font-family: FontAwesome;
+      font-size: 35px;
+      content: '\f00c';
+    }
+  }
+
+  .footer {
     // position: fixed;
     bottom: 0;
     padding-top: 15px;

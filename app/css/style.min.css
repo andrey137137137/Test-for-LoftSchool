@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,500,500i,700,700i&subset=cyrillic,cyrillic-ext");
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i&subset=cyrillic,cyrillic-ext");
 @font-face {
   font-family: FontAwesome;
   src: url("../fonts/FontAwesome/FontAwesome.eot?v=4.7.0");
@@ -56,11 +55,6 @@ section {
      * Correct the font size and margin on `h1` elements within `section` and
      * `article` contexts in Chrome, Firefox, and Safari.
      */
-
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
 
 /* Grouping content
        ========================================================================== */
@@ -519,15 +513,24 @@ template {
   display: none;
 }
 
+.float_col {
+  float: left;
+}
+
+.float_col-right {
+  float: right;
+}
+
 * {
   margin: 0;
+  border-style: none;
   padding: 0;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 body,
-header,
+.header,
 .container {
   min-width: 960px;
 }
@@ -579,25 +582,27 @@ body {
   font-weight: 200;
 }
 
-.image_wrap {
+.img_wrap {
   overflow: hidden;
-}
-
-.image_wrap__img {
-  width: auto;
-  max-width: 100%;
   background-color: #212121;
 }
 
-.link,
-.link:visited,
-.link:link,
-.link:hover {
-  color: inherit;
-  text-decoration: none;
+.img_wrap__img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  color: #fff;
 }
 
-.link {
+a,
+a:visited,
+a:link,
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+a {
   -webkit-transition: all .5s;
   -o-transition: all .5s;
   transition: all .5s;
@@ -635,15 +640,22 @@ body {
   padding: 7px 0 1px;
 }
 
+ul {
+  list-style: none inside;
+}
+
 .socials {
   font: 35px/1 FontAwesome;
   padding-top: 12px;
 }
 
-.socials__link {
+.socials__item {
   float: left;
-  display: block;
   margin-left: 20px;
+}
+
+.socials__link {
+  display: block;
   width: 30px;
   height: 35px;
   overflow: hidden;
@@ -684,37 +696,37 @@ body {
   overflow-x: auto;
 }
 
-.about_study {
+.about {
   padding: 70px 0 96px;
   background-color: #fff;
 }
 
-h2 {
+.about__title {
   position: relative;
   top: 0;
   text-align: center;
   color: #212121;
 }
 
-.sub-header {
+.about__desc {
   margin-top: 14px;
 }
 
-article {
+.study_card {
   margin-top: 37px;
   padding-left: 160px;
   width: 460px;
 }
 
-.about-me {
+.study_card-about_me {
   background: url("../img/bg/about-study/1.png") no-repeat;
 }
 
-.my-experience {
+.study_card-my_experience {
   background: url("../img/bg/about-study/2.png") no-repeat;
 }
 
-a {
+.study_card__link {
   text-decoration: underline;
   color: #03a9f4;
 }
@@ -723,12 +735,8 @@ a {
   padding: 73px 0 82px;
 }
 
-.courses .sub-header {
+.courses__desc {
   margin: 13px 0 20px;
-}
-
-.hidden {
-  display: none;
 }
 
 .course {
@@ -745,28 +753,28 @@ a {
   clear: left;
 }
 
-.course .course-time,
-.course label {
+.course__time,
+.course__sprite_checker {
   background-image: url("../img/bg/sprite.png");
   background-repeat: no-repeat;
 }
 
-.course .image-wrap {
+.course__img_wrap {
   height: 170px;
 }
 
-.course .text-wrap {
+.course__text_wrap {
   padding: 18px 21px 15px;
 }
 
-.course h3 {
+.course__title {
   line-height: 24px;
   -webkit-transition: color .5s;
   -o-transition: color .5s;
   transition: color .5s;
 }
 
-.course .course-time {
+.course__course_time {
   margin-top: 10px;
   margin-left: -1px;
   padding-left: 16px;
@@ -774,18 +782,18 @@ a {
   background-position: -2px -47px;
 }
 
-.course .checkbox-wrap {
+.course__checkbox_wrap {
   display: block;
   padding: 20px 20px 19px;
   height: 59px;
   background-color: #f5f5f5;
 }
 
-.course input {
+.course__input {
   display: none;
 }
 
-.course label {
+.course__sprite_checker {
   display: block;
   padding-top: 1px;
   padding-left: 39px;
@@ -800,12 +808,12 @@ a {
   transition: all .5s;
 }
 
-.course input:checked + label {
+.course__input:checked + .course__sprite_checker {
   color: #8cc34b;
   background-position: -2px -26px;
 }
 
-.course .foreground {
+.course__foreground {
   position: absolute;
   top: 165px;
   left: -100%;
@@ -817,20 +825,20 @@ a {
   transition: all .5s;
 }
 
-.course.active h3 {
+.course-active .course__title {
   color: #8cc34b;
 }
 
-.course.active .foreground {
+.course-active .course__foreground {
   left: 0;
 }
 
-.course.learned {
+.course-learned {
   -webkit-box-shadow: 0 0 0 #000;
   box-shadow: 0 0 0 #000;
 }
 
-.course.learned .foreground {
+.course-learned .course__foreground {
   top: 0;
   left: 0;
   height: 100%;
@@ -850,7 +858,7 @@ a {
   content: '\f00c';
 }
 
-footer {
+.footer {
   bottom: 0;
   padding-top: 15px;
   width: 100%;

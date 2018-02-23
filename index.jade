@@ -14,8 +14,8 @@ body
   header.section.header
 
     div.float_col.author
-      div.float_col.image_wrap.author__logo_wrap
-        img.image_wrap__img(src="img/logo.jpg" alt="Логотип")
+      div.float_col.img_wrap.author__logo_wrap
+        img.img_wrap__img(src="img/logo.jpg" alt="Логотип")
       div.float_col.author__text
         h2.title.section__title.author__title Быстров Борис Викторович
         a.link.author__link(href="#") bystrov@gmail.coma
@@ -25,11 +25,11 @@ body
         li.socials__item
           a(class="link socials__link socials__#{item}" href="#") #{item}
 
-  section.section.about_study
+  section.section.about
     div.container
 
-      h2.title.section__title О будущем ученике
-      p.section__desc Ребятам из Loftschool будет полезно узнать немного обо мне
+      h2.title.section__title.about__title О будущем ученике
+      p.section__desc.about__desc Ребятам из Loftschool будет полезно узнать немного обо мне
 
       - var study_info = [{modifikator: "about_me", title: "Немного обо мне", description: "Я живу в Санкт-Петербурге (Россия). Мне 26 лет. Высшее образование - закончил НИУ ИТМО. Опыт в разработке 1 год. Уже окончил курсы в Академии Программирования, где не плохо научился верстать. Пока есть только один сайт, которым могу похвастаться:"}, {modifikator: "my_experience", title: "Мой опыт в разработке", description: "В этом блоке я расскажу о себе, что я уже умею. Здесь я укажу другие курсы, которые до этого я уже проходил. Могу перечислить технологии, которыми уже умею пользоваться. К примеру: html5, css3, sass, jade, git и пр."}]
 
@@ -47,27 +47,26 @@ body
     div#courses.container
 
       h1.title.section__title Курсы на loftblog
-      p.section__desc которые мне помогут в выполнении этого задания
+      p.section__desc.courses__desc которые мне помогут в выполнении этого задания
 
       - var courses = [{id: 1, title: "Основы JavaScript", description: "Видеокурс о одном из самых популярных языков программирования - JavaScript. Изучая этот курс вы познаете этот прекрасный язык от самых основ.", time: {lessons: 24, hours: 6, minutes: 46}}, {id: 2, title: "JQUERY", description: "Видеокурс о одном из самых популярных языков программирования - JavaScript. Изучая этот курс вы познаете этот прекрасный язык от самых основ.", time: {lessons: 11, hours: 2,   minutes: 6 }}, {id: 3, title: "Базовые элементы страницы", description: "Видеокурс по верстке и программированию основных и популярных элементов сайтов. Посмотрев этот курс вы научитесь создавать табы, аккордеон, слайдшоу, слайдер и т.д.", time: {lessons: 9, hours: 2, minutes: 7}}, {id: 4, title: "Создание адаптивных сайтов", description: "В этом курсе вы узнаете как создавать адаптивные сайты, что такое адаптивная верстка и дизайн.", time: {lessons: 7, hours: 2, minutes: 11}}, {id: 5, title: "Верстка адаптивной css галереи", description: "В этом видеокурсе вы изучите инструменты, техники и подходы для web-разработчика, которые помогут вам решать поставленные задачи более быстро и эффективно.", time: {lessons: 6, hours: 1, minutes: 9 }}, {id: 6, title: "Верстка адаптивной css галереи", description: "В этом курсе мы разберем как сверстать адаптивную css галерею. Также познакомимся с Flexbox.", time: {lessons: 4, hours: 0, minutes: 50 }}]
 
       mixin course_card(course)
         article.card.float_col.course
-          div.image_wrap.course__image_wrap
-            img.image_wrap__img(src="img/courses/#{course.id}.jpg" alt="#{course.title}")
+          div.img_wrap.course__img_wrap
+            img.img_wrap__img(src="img/courses/#{course.id}.jpg" alt="#{course.title}")
           div.course__text_wrap
             h3.title.card__title.course__title #{course.title}
             p.card__desc.course__desc #{course.description}
-            div.course__time
-              if course.time.lessons > 4
-                #{course.time.lessons} уроков
-              else if course.time.lessons > 1
-                #{course.time.lessons} урока
-              else if course.time.lessons > 0
-                #{course.time.lessons} урок
-              //- (#{course.time.hours} часов #{course.time.minutes} минут)
+            div.course__time #{course.time.lessons} уроков (#{course.time.hours} часов #{course.time.minutes} минут)
+              //- if course.time.lessons > 4
+              //-   #{course.time.lessons} уроков
+              //- else if course.time.lessons > 1
+              //-   #{course.time.lessons} урока
+              //- else if course.time.lessons > 0
+              //-   #{course.time.lessons} урок
           div.course__checkbox_wrap
-            input(id="checkbox-#{course.id}" type="checkbox" value="#{course.id}")
+            input.course__input(id="checkbox-#{course.id}" type="checkbox" value="#{course.id}")
             label.course__sprite_checker(for="checkbox-#{course.id}") Посмотрел
           div.course__foreground
 
@@ -80,5 +79,4 @@ body
     p.footer__desc А это футер, с текстом внутри. Он должен быть прибит к низу окна браузера,
     p.footer__desc не зависимо от количества контента на странице и размера окна.
 
-  script(src="js/jquery-3.1.1.min.js")
-  script(src="js/script.js")
+  script(src="js/script.min.js")
