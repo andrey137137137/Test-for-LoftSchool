@@ -6,44 +6,36 @@
 
 * {
   margin: 0;
-  border-style: none;
+  border-width: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-body,
-.header,
-.container {
-  min-width: 960px;
 }
 
 body {
   // position: relative;
   // padding-bottom: 72px;
-  font: 14px/21px $mainFont , $reserveFonts;
+  // font: 14px/21px $mainFont , $reserveFonts;
+  font: 87.5%/1.5 $mainFont , $reserveFonts;
   color: #727272;
   // background-color: $white;
   background: #f4f5f2 url(../img/bg/courses.png);
   // overflow-x: auto;
 }
 
-  // header,
-  // section,
-  // article,
-  // footer {
-  //   display: block;
-  // }
+  .section {
+    overflow: hidden;
+  }
 
-  // header,
-  // section,
-  // footer {
-  //   overflow: hidden;
-  // }
+  .header,
+  .container {
+    min-width: 100px;
+  }
 
   .section,
   .author,
   .socials,
   .container,
+  .float_col,
   {
     &:after {
       display: block;
@@ -59,22 +51,8 @@ body {
     line-height: 1.2;
   }
 
-  .title {
-    @include fontFamily;
-    color: $lightBlack;
-  }
-
-  .section__title {
-    font-size: 42px;
-    // font-weight: 500;
-    // for 'Open Sans'
-    font-weight: 600;
-    text-align: center;
-  }
-
-  // h1,
-  // h3 {
-  //   color: $lightBlack;
+  // .title {
+  //   @include fontFamily;
   // }
 
   .section__title,
@@ -84,7 +62,17 @@ body {
 
   .title,
   .section__desc {
-    font-size: 21px;
+    // font-size: 21px;
+    font-size: 1.5em;
+  }
+
+  .section__title {
+    // font-size: 42px;
+    font-size: 3em;
+    // font-weight: 500;
+    // for 'Open Sans'
+    font-weight: 600;
+    text-align: center;
   }
 
   .section__desc {
@@ -93,8 +81,8 @@ body {
 
   .img_wrap
   {
-    overflow: hidden;
     background-color: $lightBlack;
+    overflow: hidden;
 
     &__img {
       width: 100%;
@@ -110,8 +98,7 @@ body {
     &:visited,
     &:link,
     &:hover {
-      text-decoration: none;
-      color: inherit;
+      outline-width: 0;
     }
 
     & {
@@ -131,9 +118,9 @@ body {
 
     &__link
     {
-      & {
-        opacity: .7;
-      }
+      color: inherit;
+      text-decoration: none;
+      opacity: .7;
 
       &:hover {
         opacity: 1;
@@ -143,12 +130,6 @@ body {
 
     .author
     {
-      // float: left;
-
-      // div {
-      //   float: left;
-      // }
-
       &__logo_wrap {
         margin-right: 20px;
         border-radius: 50%;
@@ -158,7 +139,8 @@ body {
       }
 
       &__title {
-        font-size: 21.26px;
+        // font-size: 21.26px;
+        font-size: 1.518571428571429em;
         padding: 7px 0 1px;
       }
     }
@@ -169,9 +151,9 @@ body {
 
     .socials
     {
-      font: 35px/1 FontAwesome;
-      // float: right;
       padding-top: 12px;
+      // font: 35px/1 FontAwesome;
+      font: 2.5em/1 FontAwesome;
 
       &__item {
         float: left;
@@ -213,8 +195,8 @@ body {
     // justify-content: flex-start;
     // align-items: flex-start;
     margin: 0 auto;
-    width: 960px;
-    // max-width: 100%;
+    width: 100%;
+    max-width: 960px;
     // outline: 1px solid #070;
   }
 
@@ -227,6 +209,7 @@ body {
       &__title {
         margin-bottom: 8px;
         font-weight: 400;
+        color: $lightBlack;
       }
       &__desc {
         overflow-x: auto;
@@ -254,7 +237,7 @@ body {
     .study_card
     {
       margin-top: 37px;
-      padding-left: 160px;
+      // padding-left: 160px;
       width: 460px;
 
       &-about_me {
@@ -263,6 +246,17 @@ body {
 
       &-my_experience {
         background: url(../img/bg/about-study/2.png) no-repeat;
+      }
+
+      &__img_wrap
+      {
+        margin-right: 20px;
+        width: 140px;
+        background: none;
+      }
+
+      &__text_wrap {
+        width: 300px;
       }
 
       // &__title {
@@ -280,6 +274,10 @@ body {
     padding: 73px 0 82px;
     // height: 1239px;
     // background: #f4f5f2 url(../img/bg/courses.png);
+
+    &__title {
+      color: $lightBlack;
+    }
 
     &__desc {
       margin: 13px 0 20px;
@@ -329,7 +327,7 @@ body {
       //   margin-bottom: 8px;
       // }
 
-      &__course_time {
+      &__time {
         margin-top: 10px;
         margin-left: -1px;
         padding-left: 16px;
@@ -353,12 +351,14 @@ body {
           padding-top: 1px;
           padding-left: 39px;
           height: 20px;
-          font-size: 18px;
           font-weight: 400;
-          line-height: 20px;
+          // font-size: 18px;
+          // line-height: 20px;
+          font-size: 1.285714285714286em;
+          line-height: 1.111111111111111;
           background-position: -2px -2px;
-          cursor: pointer;
           transition: all .5s;
+          cursor: pointer;
         }
 
         &__input:checked + &__sprite_checker {
@@ -409,7 +409,8 @@ body {
 
     &:before {
       font-family: FontAwesome;
-      font-size: 35px;
+      // font-size: 35px;
+      font-size: 0.8333333333333333em;
       content: '\f00c';
     }
   }
@@ -425,3 +426,5 @@ body {
   }
 
   // @import 'foreground';
+
+@import 'adaptive';
