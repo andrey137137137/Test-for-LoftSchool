@@ -796,6 +796,10 @@ ul {
   margin-bottom: 20px;
 }
 
+.course_wrap-hidden {
+  display: none;
+}
+
 .course {
   position: relative;
   margin-top: 23px;

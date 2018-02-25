@@ -318,9 +318,14 @@ body {
     }
   }
 
-    // .hidden {
-    //   display: none;
-    // }
+    .course_wrap-hidden
+    {
+      display: none;
+
+      // &:nth-child(1n) {
+      //   clear: none;
+      // }
+    }
 
       .course
       {
