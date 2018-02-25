@@ -1,103 +1,37 @@
 
-@media only screen and (min-width: 400px)
+@media only screen and (min-width: 410px)
 {
-    // .float_col.col
-    // {
-    //   &_2:nth-child(3) {
-    //     clear: both;
-    //   }
-    // }
 
     .col
     {
       &_2 {
         width: unquote($w480px);
       }
+
+      &_3,
+      &_4,
+      &_5,
+      &_6,
+      &_7,
+      &_8,
+      &_9 {
+        width: unquote($w800px);
+      }
     }
 
 }
 
-@media only screen and (min-width: 600px)
+@media only screen and (min-width: 450px)
 {
-    .float
-    {
-      float: left;
-
-      &-right {
-        float: right;
-      }
-    }
-
-    .float_col
-    {
-      float: left;
-
-      &-right {
-        float: right;
-      }
-
-      // &.col
-      // {
-      //   &_1:nth-child(1) {
-      //     clear: both;
-      //   }
-      // }
-    }
-
-    // .float_col.col
-    // {
-    //   &_3,
-    //   &_4,
-    //   &_5,
-    //   &_6
-    //   {
-    //     &:nth-child(3) {
-    //       clear: both;
-    //     }
-    //   }
-    // }
 
     .col
     {
       &_3,
       &_4,
       &_5,
-      &_6 {
-        width: unquote($w480px);
-      }
-
-      // &_1_n_30px {
-      //   width: $w130px;
-      // }
-
-      // &_2_n_30px {
-      //   width: $w230px;
-      // }
-
-      // &_6_n_30_px {
-      //   width: $w630px;
-      // }
-
-      &_7 {
-        width: unquote($w560px);
-      }
-
-      // &_7_n_30px {
-      //   width: $w730px;
-      // }
-
-      &_8 {
-        width: unquote($w640px);
-      }
-
-      // &_8_n_30px {
-      //   width: $w830px;
-      // }
-
-      // &_8_n_70px {
-      //   width: $w870px;
-      // }
-
+      &_6,
+      &_7,
+      &_8,
       &_9 {
         width: unquote($w720px);
       }
@@ -111,59 +45,77 @@
       }
     }
 
+}
+
+@media only screen and (min-width: 500px)
+{
+
+    .float
+    {
+      float: left;
+
+      &-right {
+        float: right;
+      }
+    }
+
+    .col
+    {
+      &_3,
+      &_4,
+      &_5,
+      &_6,
+      &_7,
+      &_8 {
+        width: unquote($w640px);
+      }
+    }
+
+}
+
+@media only screen and (min-width: 550px)
+{
+
+    .float_col
+    {
+      float: left;
+
+      &-right {
+        float: right;
+      }
+    }
+
+    .col
+    {
+      &_3,
+      &_4,
+      &_5,
+      &_6 {
+        width: unquote($w480px);
+      }
+
+      &_7 {
+        width: unquote($w560px);
+      }
+    }
+
     .course_wrap:nth-child(odd) {
       clear: both;
     }
 
 }
 
+@media only screen and (min-width: 600px)
+{
+
+      .author__text_wrap {
+        width: auto;
+      }
+
+}
+
 @media only screen and (min-width: 768px)
 {
-    // .float_col.col
-    // {
-    //   &_1,
-    //   &_2,
-    //   &_3,
-    //   &_4,
-    //   &_5
-    //   {
-    //     &:nth-child(3) {
-    //       clear: none;
-    //     }
-    //   }
-
-    //   &_1:nth-child(13),
-    //   &_2:nth-child(7),
-    //   &_3:nth-child(5),
-    //   &_4:nth-child(4) {
-    //     clear: both;
-    //   }
-    // }
-
-    .col
-    {
-      &_1 {
-        width: unquote($w80px);
-      }
-
-      &_2 {
-        width: unquote($w160px);
-      }
-
-      &_3 {
-        width: unquote($w240px);
-      }
-
-      &_4 {
-        width: unquote($w320px);
-        // $w100: unquote($w960px);
-        // width: calc(#{$w100}/3);
-      }
-
-      &_5 {
-        width: unquote($w400px);
-      }
-    }
 
     .study_card
     {
@@ -191,6 +143,36 @@
         }
     }
 
+}
+
+@media only screen and (min-width: 815px)
+{
+
+    .col
+    {
+      &_1 {
+        width: unquote($w80px);
+      }
+
+      &_2 {
+        width: unquote($w160px);
+      }
+
+      &_3 {
+        width: unquote($w240px);
+      }
+
+      &_4 {
+        width: unquote($w320px);
+        // $w100: unquote($w960px);
+        // width: calc(#{$w100}/3);
+      }
+
+      &_5 {
+        width: unquote($w400px);
+      }
+    }
+
     .course_wrap
     {
       &:nth-child(odd) {
@@ -202,19 +184,4 @@
       }
     }
 
-}
-
-@media only screen and (min-width: 950px)
-{
-  
-}
-
-@media only screen and (min-width: 1020px)
-{
-  
-}
-
-@media only screen and (min-width: 1230px)
-{
-  
 }

@@ -531,7 +531,7 @@ template {
 .col_7,
 .col_8,
 .col_9 {
-  width: 66.66666666666667%;
+  width: 91.66666666666667%;
 }
 
 .col_10,
@@ -567,10 +567,11 @@ body {
   min-width: 100px;
 }
 
-.section:after,
+.wide_container:after,
+.float:after,
 .float_col:after,
-.clear:after,
-.container:after {
+.container:after,
+.clear:after {
   display: block;
   width: 100%;
   clear: both;
@@ -647,6 +648,12 @@ a {
   color: #fff;
 }
 
+.author,
+.socials {
+  display: table;
+  margin: 0 auto;
+}
+
 .author__logo_wrap,
 .author__text_wrap {
   float: left;
@@ -661,6 +668,10 @@ a {
   height: 60px;
 }
 
+.author__text_wrap {
+  width: 165px;
+}
+
 .author__title {
   padding: 7px 0 1px;
   font-size: 1.518571428571429em;
@@ -672,9 +683,6 @@ ul {
 }
 
 .socials {
-  float: none;
-  display: table;
-  margin: 0 auto;
   padding-top: 12px;
   font: 2.5em/1 FontAwesome;
 }
@@ -903,21 +911,48 @@ ul {
 }
 
 .footer {
-  bottom: 0;
-  padding-top: 15px;
-  width: 100%;
-  height: 72px;
+  padding: 15px 0.7142857142857143em;
   text-align: center;
   background-color: #212121;
 }
 
-@media only screen and (min-width: 400px) {
+@media only screen and (min-width: 410px) {
   .col_2 {
     width: 50%;
   }
+
+  .col_3,
+  .col_4,
+  .col_5,
+  .col_6,
+  .col_7,
+  .col_8,
+  .col_9 {
+    width: 83.33333333333333%;
+  }
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 450px) {
+  .col_3,
+  .col_4,
+  .col_5,
+  .col_6,
+  .col_7,
+  .col_8,
+  .col_9 {
+    width: 75%;
+  }
+
+  .col_10 {
+    width: 83.33333333333333%;
+  }
+
+  .col_11 {
+    width: 91.66666666666667%;
+  }
+}
+
+@media only screen and (min-width: 500px) {
   .float {
     float: left;
   }
@@ -926,6 +961,17 @@ ul {
     float: right;
   }
 
+  .col_3,
+  .col_4,
+  .col_5,
+  .col_6,
+  .col_7,
+  .col_8 {
+    width: 66.66666666666667%;
+  }
+}
+
+@media only screen and (min-width: 550px) {
   .float_col {
     float: left;
   }
@@ -945,28 +991,39 @@ ul {
     width: 58.33333333333333%;
   }
 
-  .col_8 {
-    width: 66.66666666666667%;
-  }
-
-  .col_9 {
-    width: 75%;
-  }
-
-  .col_10 {
-    width: 83.33333333333333%;
-  }
-
-  .col_11 {
-    width: 91.66666666666667%;
-  }
-
   .course_wrap:nth-child(odd) {
     clear: both;
   }
 }
 
+@media only screen and (min-width: 600px) {
+  .author__text_wrap {
+    width: auto;
+  }
+}
+
 @media only screen and (min-width: 768px) {
+  .study_card__img_wrap {
+    margin-right: 4.347826086956522%;
+    width: 30.43478260869565%;
+  }
+
+  .study_card__img {
+    display: inline;
+    width: 100%;
+  }
+
+  .study_card__text_wrap {
+    width: 65.21739130434783%;
+  }
+
+  .study_card__title,
+  .study_card__desc {
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 815px) {
   .col_1 {
     width: 8.333333333333333%;
   }
@@ -985,25 +1042,6 @@ ul {
 
   .col_5 {
     width: 41.66666666666667%;
-  }
-
-  .study_card__img_wrap {
-    margin-right: 4.347826086956522%;
-    width: 30.43478260869565%;
-  }
-
-  .study_card__img {
-    display: inline;
-    width: 100%;
-  }
-
-  .study_card__text_wrap {
-    width: 65.21739130434783%;
-  }
-
-  .study_card__title,
-  .study_card__desc {
-    text-align: left;
   }
 
   .course_wrap:nth-child(odd) {

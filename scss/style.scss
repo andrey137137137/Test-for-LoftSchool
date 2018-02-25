@@ -37,10 +37,11 @@ body {
     min-width: 100px;
   }
 
-  .section,
+  .wide_container,
+  .float,
   .float_col,
-  .clear,
-  .container
+  .container,
+  .clear
   {
     &:after {
       display: block;
@@ -133,6 +134,12 @@ body {
       }
     }
 
+    .author,
+    .socials {
+      display: table;
+      margin: 0 auto;
+    }
+
     .author
     {
       &__logo_wrap,
@@ -146,6 +153,10 @@ body {
         border: 1px solid $white;
         width: 60px;
         height: 60px;
+      }
+
+      &__text_wrap {
+        width: 165px;
       }
 
         &__title {
@@ -162,9 +173,6 @@ body {
 
     .socials
     {
-      float: none;
-      display: table;
-      margin: 0 auto;
       padding-top: 12px;
       // font: 35px/1 FontAwesome;
       font: 2.5em/1 FontAwesome;
@@ -439,10 +447,10 @@ body {
 
   .footer {
     // position: fixed;
-    bottom: 0;
-    padding-top: 15px;
-    width: 100%;
-    height: 72px;
+    // bottom: 0;
+    padding: 15px unquote($colMrg);
+    // width: 100%;
+    // height: 72px;
     text-align: center;
     background-color: $lightBlack;
   }
