@@ -9,7 +9,7 @@
 </head>
 <body>
   <header class="section wide_container header">
-    <div class="float author">
+    <div class="clear float author">
       <div class="float img_wrap author__logo_wrap"><img src="img/logo.jpg" alt="Логотип" class="img_wrap__img"></div>
       <div class="float author__text">
         <h2 class="title section__title author__title">Быстров Борис Викторович</h2><a href="#" class="header__link">bystrov@gmail.com</a>
@@ -23,18 +23,18 @@
   </header>
   <section class="section about">
     <div class="container">
-      <h2 class="col_12 title section__title about__title">О будущем ученике</h2>
-      <p class="col_12 section__desc about__desc">Ребятам из Loftschool будет полезно узнать немного обо мне</p>
-            <article class="float_col col_6 card study_card study_card-about_me">
-              <div class="float img_wrap study_card__img_wrap"><img src="img/about-study/1.png" alt="Немного обо мне" class="img_wrap__img"></div>
+      <h2 class="col col_12 title section__title about__title">О будущем ученике</h2>
+      <p class="col col_12 section__desc about__desc">Ребятам из Loftschool будет полезно узнать немного обо мне</p>
+            <article class="float_col col_6 card study_card">
+              <div class="float img_wrap study_card__img_wrap"><img src="img/about-study/1.png" alt="Немного обо мне" class="img_wrap__img study_card__img"></div>
               <div class="float study_card__text_wrap">
                 <h3 class="title card__title study_card__title">Немного обо мне</h3>
                 <p class="card__desc study_card__desc">Я живу в Санкт-Петербурге (Россия). Мне 26 лет. Высшее образование - закончил НИУ ИТМО. Опыт в разработке 1 год. Уже окончил курсы в Академии Программирования, где не плохо научился верстать. Пока есть только один сайт, которым могу похвастаться: <a href="#" class="study_card__link">www.yandex.ru</a>
                 </p>
               </div>
             </article>
-            <article class="float_col col_6 card study_card study_card-my_experience">
-              <div class="float img_wrap study_card__img_wrap"><img src="img/about-study/2.png" alt="Мой опыт в разработке" class="img_wrap__img"></div>
+            <article class="float_col col_6 card study_card">
+              <div class="float img_wrap study_card__img_wrap"><img src="img/about-study/2.png" alt="Мой опыт в разработке" class="img_wrap__img study_card__img"></div>
               <div class="float study_card__text_wrap">
                 <h3 class="title card__title study_card__title">Мой опыт в разработке</h3>
                 <p class="card__desc study_card__desc">В этом блоке я расскажу о себе, что я уже умею. Здесь я укажу другие курсы, которые до этого я уже проходил. Могу перечислить технологии, которыми уже умею пользоваться. К примеру: html5, css3, sass, jade, git и пр.
@@ -45,9 +45,9 @@
   </section>
   <section class="section courses">
     <div id="courses" class="container">
-      <h1 class="col_12 title section__title courses__title">Курсы на loftblog</h1>
-      <p class="col_12 section__desc courses__desc">которые мне помогут в выполнении этого задания</p>
-            <div class="float_col col_4">
+      <h1 class="col col_12 title section__title courses__title">Курсы на loftblog</h1>
+      <p class="col col_12 section__desc courses__desc">которые мне помогут в выполнении этого задания</p>
+            <div class="float_col col_4 course_wrap">
               <article class="card course">
                 <div class="img_wrap course__img_wrap"><img src="img/courses/1.jpg" alt="Основы JavaScript" class="img_wrap__img"></div>
                 <div class="course__text_wrap">
@@ -58,12 +58,12 @@
                 </div>
                 <div class="course__checkbox_wrap">
                   <input id="checkbox-1" type="checkbox" value="1" class="course__input">
-                  <label for="checkbox-1" class="course__sprite_checker">Посмотрел</label>
+                  <label for="checkbox-1" class="course__label">Посмотрел</label>
                 </div>
                 <div class="course__foreground"></div>
               </article>
             </div>
-            <div class="float_col col_4">
+            <div class="float_col col_4 course_wrap">
               <article class="card course">
                 <div class="img_wrap course__img_wrap"><img src="img/courses/2.jpg" alt="Основы JQUERY" class="img_wrap__img"></div>
                 <div class="course__text_wrap">
@@ -74,12 +74,12 @@
                 </div>
                 <div class="course__checkbox_wrap">
                   <input id="checkbox-2" type="checkbox" value="2" class="course__input">
-                  <label for="checkbox-2" class="course__sprite_checker">Посмотрел</label>
+                  <label for="checkbox-2" class="course__label">Посмотрел</label>
                 </div>
                 <div class="course__foreground"></div>
               </article>
             </div>
-            <div class="float_col col_4">
+            <div class="float_col col_4 course_wrap">
               <article class="card course">
                 <div class="img_wrap course__img_wrap"><img src="img/courses/3.jpg" alt="Базовые элементы страницы" class="img_wrap__img"></div>
                 <div class="course__text_wrap">
@@ -90,12 +90,12 @@
                 </div>
                 <div class="course__checkbox_wrap">
                   <input id="checkbox-3" type="checkbox" value="3" class="course__input">
-                  <label for="checkbox-3" class="course__sprite_checker">Посмотрел</label>
+                  <label for="checkbox-3" class="course__label">Посмотрел</label>
                 </div>
                 <div class="course__foreground"></div>
               </article>
             </div>
-            <div class="float_col col_4">
+            <div class="float_col col_4 course_wrap">
               <article class="card course">
                 <div class="img_wrap course__img_wrap"><img src="img/courses/4.jpg" alt="Создание адаптивных сайтов" class="img_wrap__img"></div>
                 <div class="course__text_wrap">
@@ -106,12 +106,12 @@
                 </div>
                 <div class="course__checkbox_wrap">
                   <input id="checkbox-4" type="checkbox" value="4" class="course__input">
-                  <label for="checkbox-4" class="course__sprite_checker">Посмотрел</label>
+                  <label for="checkbox-4" class="course__label">Посмотрел</label>
                 </div>
                 <div class="course__foreground"></div>
               </article>
             </div>
-            <div class="float_col col_4">
+            <div class="float_col col_4 course_wrap">
               <article class="card course">
                 <div class="img_wrap course__img_wrap"><img src="img/courses/5.jpg" alt="Верстка адаптивной css галереи" class="img_wrap__img"></div>
                 <div class="course__text_wrap">
@@ -122,12 +122,12 @@
                 </div>
                 <div class="course__checkbox_wrap">
                   <input id="checkbox-5" type="checkbox" value="5" class="course__input">
-                  <label for="checkbox-5" class="course__sprite_checker">Посмотрел</label>
+                  <label for="checkbox-5" class="course__label">Посмотрел</label>
                 </div>
                 <div class="course__foreground"></div>
               </article>
             </div>
-            <div class="float_col col_4">
+            <div class="float_col col_4 course_wrap">
               <article class="card course">
                 <div class="img_wrap course__img_wrap"><img src="img/courses/6.jpg" alt="Верстка адаптивной css галереи" class="img_wrap__img"></div>
                 <div class="course__text_wrap">
@@ -138,7 +138,7 @@
                 </div>
                 <div class="course__checkbox_wrap">
                   <input id="checkbox-6" type="checkbox" value="6" class="course__input">
-                  <label for="checkbox-6" class="course__sprite_checker">Посмотрел</label>
+                  <label for="checkbox-6" class="course__label">Посмотрел</label>
                 </div>
                 <div class="course__foreground"></div>
               </article>

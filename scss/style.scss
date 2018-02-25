@@ -39,6 +39,7 @@ body {
 
   .section,
   .float_col,
+  .clear,
   .container
   {
     &:after {
@@ -51,7 +52,7 @@ body {
 
   .title,
   .section__desc {
-    width: 100%;
+    // width: 100%;
     line-height: 1.2;
   }
 
@@ -119,15 +120,6 @@ body {
     }
   }
 
-    .float
-    {
-      float: left;
-
-      &-right {
-        float: right;
-      }
-    }
-
     .img_wrap
     {
       background-color: $lightBlack;
@@ -143,6 +135,11 @@ body {
 
     .author
     {
+      &__logo_wrap,
+      &__text_wrap {
+        float: left;
+      }
+
       &__logo_wrap {
         margin-right: 20px;
         border-radius: 50%;
@@ -151,11 +148,12 @@ body {
         height: 60px;
       }
 
-      &__title {
-        // font-size: 21.26px;
-        font-size: 1.518571428571429em;
-        padding: 7px 0 1px;
-      }
+        &__title {
+          padding: 7px 0 1px;
+          // font-size: 21.26px;
+          font-size: 1.518571428571429em;
+          text-align: left;
+        }
     }
 
     ul {
@@ -164,13 +162,21 @@ body {
 
     .socials
     {
+      float: none;
+      display: table;
+      margin: 0 auto;
       padding-top: 12px;
       // font: 35px/1 FontAwesome;
       font: 2.5em/1 FontAwesome;
 
-      &__item {
+      &__item
+      {
         float: left;
         margin-left: 20px;
+
+        &:first-child {
+          margin: 0;
+        }
       }
 
         &__link {
@@ -248,36 +254,44 @@ body {
       // padding-left: 160px;
       // width: 460px;
 
-      &-about_me {
-        background: url(../img/bg/about-study/1.png) no-repeat;
-      }
+      // &-about_me {
+      //   background: url(../img/bg/about-study/1.png) no-repeat;
+      // }
 
-      &-my_experience {
-        background: url(../img/bg/about-study/2.png) no-repeat;
+      // &-my_experience {
+      //   background: url(../img/bg/about-study/2.png) no-repeat;
+      // }
+
+      &__img_wrap,
+      &__text_wrap {
+        width: 100%;
       }
 
       &__img_wrap
       {
-        // margin-right: 20px;
-        margin-right: 4.347826086956522%;
-        // width: 140px;
-        width: 30.43478260869565%;
+        height: 145px;
         background: none;
       }
 
-      &__text_wrap {
-        // width: 300px;
-        width: 65.21739130434783%;
-      }
+        &__img {
+          display: table;
+          margin: 0 auto;
+          width: auto;
+        }
 
-      // &__title {
-      //   margin-bottom: 8px;
-      // }
+        &__title {
+          // margin-bottom: 8px;
+          text-align: center;
+        }
 
-      &__link {
-        text-decoration: underline;
-        color: #03a9f4;
-      }
+        &__desc {
+          text-align: justify;
+        }
+
+          &__link {
+            text-decoration: underline;
+            color: #03a9f4;
+          }
     }
 
   .courses
@@ -291,7 +305,8 @@ body {
     }
 
     &__desc {
-      margin: 13px 0 20px;
+      margin-top: 13px;
+      margin-bottom: 20px;
     }
   }
 
@@ -299,117 +314,113 @@ body {
     //   display: none;
     // }
 
-    .course
-    {
-      position: relative;
-      margin-top: 23px;
-      // width: 300px;
-      background-color: $white;
-      box-shadow: 0 1px 5px $shadow;
-      overflow: hidden;
-      // cursor: pointer;
+      .course
+      {
+        position: relative;
+        margin-top: 23px;
+        // width: 300px;
+        background-color: $white;
+        box-shadow: 0 1px 5px $shadow;
+        overflow: hidden;
+        // cursor: pointer;
 
-      $course: &;
+        $course: &;
 
-      &:nth-child(3n) {
-        clear: left;
-      }
-
-      &__time,
-      &__sprite_checker {
-        background-image: url(../img/bg/sprite.png);
-        background-repeat: no-repeat;
-      }
-
-      &__img_wrap {
-        height: 170px;
-      }
-
-      &__text_wrap {
-        padding: 18px 21px 15px;
-      }
-
-      &__title {
-        line-height: 24px;
-        transition: color .5s;
-      }
-
-      // &__desc {
-      //   margin-bottom: 8px;
-      // }
-
-      &__time {
-        margin-top: 10px;
-        margin-left: -1px;
-        padding-left: 16px;
-        color: #b6b6b6;
-        background-position: -2px -47px;
-      }
-
-      &__checkbox_wrap {
-        display: block;
-        padding: 20px 20px 19px;
-        height: 59px;
-        background-color: #f5f5f5;
-      }
-
-        &__input {
-          display: none;
+        &__time,
+        &__label {
+          background-image: url(../img/bg/sprite.png);
+          background-repeat: no-repeat;
         }
 
-        &__sprite_checker {
+        &__img_wrap {
+          height: 170px;
+        }
+
+        &__text_wrap {
+          padding: 18px 21px 15px;
+        }
+
+        &__title {
+          line-height: 24px;
+          transition: color .5s;
+        }
+
+        // &__desc {
+        //   margin-bottom: 8px;
+        // }
+
+        &__time {
+          margin-top: 10px;
+          margin-left: -1px;
+          padding-left: 16px;
+          color: #b6b6b6;
+          background-position: -2px -47px;
+        }
+
+        &__checkbox_wrap {
           display: block;
-          padding-top: 1px;
-          padding-left: 39px;
-          height: 20px;
-          font-weight: 400;
-          // font-size: 18px;
-          // line-height: 20px;
-          font-size: 1.285714285714286em;
-          line-height: 1.111111111111111;
-          background-position: -2px -2px;
+          padding: 20px 20px 19px;
+          height: 59px;
+          background-color: #f5f5f5;
+        }
+
+          &__input {
+            display: none;
+          }
+
+          &__label {
+            display: block;
+            padding-top: 1px;
+            padding-left: 39px;
+            height: 20px;
+            font-weight: 400;
+            // font-size: 18px;
+            // line-height: 20px;
+            font-size: 1.285714285714286em;
+            line-height: 1.111111111111111;
+            background-position: -2px -2px;
+            transition: all .5s;
+            cursor: pointer;
+          }
+
+          &__input:checked + &__label {
+            color: $green;
+            background-position: -2px -26px;
+          }
+
+        &__foreground {
+          position: absolute;
+          top: 165px;
+          left: -100%;
+          width: 100%;
+          height: 5px;
+          background-color: $green;
           transition: all .5s;
-          cursor: pointer;
         }
 
-        &__input:checked + &__sprite_checker {
-          color: $green;
-          background-position: -2px -26px;
+        &-active
+        {
+          #{$course}__title {
+            color: $green;
+          }
+
+          #{$course}__foreground {
+            left: 0;
+          }
         }
 
-      &__foreground {
-        position: absolute;
-        top: 165px;
-        left: -100%;
-        width: 100%;
-        height: 5px;
-        background-color: $green;
-        transition: all .5s;
-      }
+        &-learned
+        {
+          box-shadow: 0 0 0 #000;
 
-      &-active
-      {
-        #{$course}__title {
-          color: $green;
-        }
-
-        #{$course}__foreground {
-          left: 0;
+          #{$course}__foreground {
+            top: 0;
+            left: 0;
+            height: 100%;
+            opacity: .2;
+          }
         }
       }
-
-      &-learned
-      {
-        box-shadow: 0 0 0 #000;
-
-        #{$course}__foreground {
-          top: 0;
-          left: 0;
-          height: 100%;
-          opacity: .2;
-        }
-      }
-    }
 
   #learned
   {
@@ -436,6 +447,6 @@ body {
     background-color: $lightBlack;
   }
 
-  // @import 'foreground';
+// @import 'foreground';
 
 @import 'adaptive';

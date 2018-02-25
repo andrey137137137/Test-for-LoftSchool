@@ -1,23 +1,8 @@
 
     .float_col,
     .col {
+      margin: 0 auto;
       padding: 0 unquote($colMrg);
-    }
-
-    .float_col
-    {
-      float: left;
-
-      &-right {
-        float: right;
-      }
-
-      // &.col
-      // {
-      //   &_1:nth-child(1) {
-      //     clear: both;
-      //   }
-      // }
     }
 
     .col
@@ -33,7 +18,10 @@
       &_6,
       &_7,
       &_8,
-      &_9,
+      &_9 {
+        width: unquote($w640px);
+      }
+
       &_10,
       &_11,
       &_12 {

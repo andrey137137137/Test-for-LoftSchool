@@ -515,15 +515,8 @@ template {
 
 .float_col,
 .col {
+  margin: 0 auto;
   padding: 0 0.7142857142857143em;
-}
-
-.float_col {
-  float: left;
-}
-
-.float_col-right {
-  float: right;
 }
 
 .col_1 {
@@ -537,7 +530,10 @@ template {
 .col_6,
 .col_7,
 .col_8,
-.col_9,
+.col_9 {
+  width: 66.66666666666667%;
+}
+
 .col_10,
 .col_11,
 .col_12 {
@@ -573,6 +569,7 @@ body {
 
 .section:after,
 .float_col:after,
+.clear:after,
 .container:after {
   display: block;
   width: 100%;
@@ -582,7 +579,6 @@ body {
 
 .title,
 .section__desc {
-  width: 100%;
   line-height: 1.2;
 }
 
@@ -639,14 +635,6 @@ a {
   opacity: 1;
 }
 
-.float {
-  float: left;
-}
-
-.float-right {
-  float: right;
-}
-
 .img_wrap {
   background-color: #212121;
   overflow: hidden;
@@ -659,6 +647,11 @@ a {
   color: #fff;
 }
 
+.author__logo_wrap,
+.author__text_wrap {
+  float: left;
+}
+
 .author__logo_wrap {
   margin-right: 20px;
   -webkit-border-radius: 50%;
@@ -669,8 +662,9 @@ a {
 }
 
 .author__title {
-  font-size: 1.518571428571429em;
   padding: 7px 0 1px;
+  font-size: 1.518571428571429em;
+  text-align: left;
 }
 
 ul {
@@ -678,6 +672,9 @@ ul {
 }
 
 .socials {
+  float: none;
+  display: table;
+  margin: 0 auto;
   padding-top: 12px;
   font: 2.5em/1 FontAwesome;
 }
@@ -685,6 +682,10 @@ ul {
 .socials__item {
   float: left;
   margin-left: 20px;
+}
+
+.socials__item:first-child {
+  margin: 0;
 }
 
 .socials__link {
@@ -745,22 +746,28 @@ ul {
   margin-top: 37px;
 }
 
-.study_card-about_me {
-  background: url("../img/bg/about-study/1.png") no-repeat;
-}
-
-.study_card-my_experience {
-  background: url("../img/bg/about-study/2.png") no-repeat;
+.study_card__img_wrap,
+.study_card__text_wrap {
+  width: 100%;
 }
 
 .study_card__img_wrap {
-  margin-right: 4.347826086956522%;
-  width: 30.43478260869565%;
+  height: 145px;
   background: none;
 }
 
-.study_card__text_wrap {
-  width: 65.21739130434783%;
+.study_card__img {
+  display: table;
+  margin: 0 auto;
+  width: auto;
+}
+
+.study_card__title {
+  text-align: center;
+}
+
+.study_card__desc {
+  text-align: justify;
 }
 
 .study_card__link {
@@ -777,7 +784,8 @@ ul {
 }
 
 .courses__desc {
-  margin: 13px 0 20px;
+  margin-top: 13px;
+  margin-bottom: 20px;
 }
 
 .course {
@@ -789,12 +797,8 @@ ul {
   overflow: hidden;
 }
 
-.course:nth-child(3n) {
-  clear: left;
-}
-
 .course__time,
-.course__sprite_checker {
+.course__label {
   background-image: url("../img/bg/sprite.png");
   background-repeat: no-repeat;
 }
@@ -833,7 +837,7 @@ ul {
   display: none;
 }
 
-.course__sprite_checker {
+.course__label {
   display: block;
   padding-top: 1px;
   padding-left: 39px;
@@ -848,7 +852,7 @@ ul {
   cursor: pointer;
 }
 
-.course__input:checked + .course__sprite_checker {
+.course__input:checked + .course__label {
   color: #8cc34b;
   background-position: -2px -26px;
 }
@@ -914,6 +918,22 @@ ul {
 }
 
 @media only screen and (min-width: 600px) {
+  .float {
+    float: left;
+  }
+
+  .float-right {
+    float: right;
+  }
+
+  .float_col {
+    float: left;
+  }
+
+  .float_col-right {
+    float: right;
+  }
+
   .col_3,
   .col_4,
   .col_5,
@@ -940,6 +960,10 @@ ul {
   .col_11 {
     width: 91.66666666666667%;
   }
+
+  .course_wrap:nth-child(odd) {
+    clear: both;
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -961,5 +985,32 @@ ul {
 
   .col_5 {
     width: 41.66666666666667%;
+  }
+
+  .study_card__img_wrap {
+    margin-right: 4.347826086956522%;
+    width: 30.43478260869565%;
+  }
+
+  .study_card__img {
+    display: inline;
+    width: 100%;
+  }
+
+  .study_card__text_wrap {
+    width: 65.21739130434783%;
+  }
+
+  .study_card__title,
+  .study_card__desc {
+    text-align: left;
+  }
+
+  .course_wrap:nth-child(odd) {
+    clear: none;
+  }
+
+  .course_wrap:nth-child(3n) {
+    clear: both;
   }
 }

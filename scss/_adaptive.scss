@@ -19,6 +19,31 @@
 
 @media only screen and (min-width: 600px)
 {
+    .float
+    {
+      float: left;
+
+      &-right {
+        float: right;
+      }
+    }
+
+    .float_col
+    {
+      float: left;
+
+      &-right {
+        float: right;
+      }
+
+      // &.col
+      // {
+      //   &_1:nth-child(1) {
+      //     clear: both;
+      //   }
+      // }
+    }
+
     // .float_col.col
     // {
     //   &_3,
@@ -86,6 +111,10 @@
       }
     }
 
+    .course_wrap:nth-child(odd) {
+      clear: both;
+    }
+
 }
 
 @media only screen and (min-width: 768px)
@@ -127,10 +156,49 @@
 
       &_4 {
         width: unquote($w320px);
+        // $w100: unquote($w960px);
+        // width: calc(#{$w100}/3);
       }
 
       &_5 {
         width: unquote($w400px);
+      }
+    }
+
+    .study_card
+    {
+      &__img_wrap
+      {
+        // margin-right: 20px;
+        margin-right: 4.347826086956522%;
+        // width: 140px;
+        width: 30.43478260869565%;
+      }
+
+        &__img {
+          display: inline;
+          width: 100%;
+        }
+
+      &__text_wrap {
+        // width: 300px;
+        width: 65.21739130434783%;
+      }
+
+        &__title,
+        &__desc {
+          text-align: left;
+        }
+    }
+
+    .course_wrap
+    {
+      &:nth-child(odd) {
+        clear: none;
+      }
+
+      &:nth-child(3n) {
+        clear: both;
       }
     }
 
