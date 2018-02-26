@@ -1,6 +1,7 @@
 ;$(document).ready(function(){'use strict';
 
-  var count = 0,
+  var restructDelay = 0,
+      count = 0,
       classBlock = 'course',
       wrapClassBlock = classBlock + '_wrap';
 
@@ -50,7 +51,17 @@
 
   $(window).resize(function(){
 
-    setTimeout(restructBlocks, 1000);
+    if ($(window).width() < 550)
+    {
+      return;
+    }
+
+    if (restructDelay)
+    {
+      clearTimeout(restructDelay);
+    }
+
+    restructDelay = setTimeout(restructBlocks, 500);
 
   });
 
@@ -94,7 +105,7 @@
           restructBlocks();
         }
 
-        console.log($('.' + wrapClassBlock + ':not(.' + wrapClassBlock + '-hidden)'));
+        // console.log($('.' + wrapClassBlock + ':not(.' + wrapClassBlock + '-hidden)'));
         $(this).dequeue();
       });
   });

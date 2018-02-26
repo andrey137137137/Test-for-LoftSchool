@@ -71,6 +71,11 @@
       }
     }
 
+    .author,
+    .socials {
+      margin: 0;
+    }
+
 }
 
 @media only screen and (min-width: 550px)
@@ -99,6 +104,36 @@
       }
     }
 
+    .study_card_wrap {
+      width: unquote($w960px);
+    }
+
+      .study_card
+      {
+        display: table;
+        margin: 0 auto;
+
+        &__img_wrap
+        {
+          margin-right: 20px;
+          width: 140px;
+        }
+
+          &__img {
+            display: inline;
+            width: 100%;
+          }
+
+        &__text_wrap {
+          width: 300px;
+        }
+
+          &__title,
+          &__desc {
+            text-align: left;
+          }
+      }
+
     .course_wrap:nth-child(odd) {
       clear: both;
     }
@@ -108,40 +143,19 @@
 @media only screen and (min-width: 600px)
 {
 
+      .study_card
+      {
+        width: 81.27208480565371%;
+
+        &__text_wrap {
+          // width: 300px;
+          width: 65.21739130434783%;
+        }
+      }
+
       .author__text_wrap {
         width: auto;
       }
-
-}
-
-@media only screen and (min-width: 768px)
-{
-
-    .study_card
-    {
-      &__img_wrap
-      {
-        // margin-right: 20px;
-        margin-right: 4.347826086956522%;
-        // width: 140px;
-        width: 30.43478260869565%;
-      }
-
-        &__img {
-          display: inline;
-          width: 100%;
-        }
-
-      &__text_wrap {
-        // width: 300px;
-        width: 65.21739130434783%;
-      }
-
-        &__title,
-        &__desc {
-          text-align: left;
-        }
-    }
 
 }
 
@@ -172,6 +186,23 @@
         width: unquote($w400px);
       }
     }
+
+    .study_card_wrap {
+      width: unquote($w480px);
+    }
+
+      .study_card
+      {
+        width: 100%;
+
+        &__img_wrap
+        {
+          // margin-right: 20px;
+          margin-right: 4.347826086956522%;
+          // width: 140px;
+          width: 30.43478260869565%;
+        }
+      }
 
     .course_wrap
     {

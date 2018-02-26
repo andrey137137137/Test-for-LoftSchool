@@ -45,10 +45,10 @@ gulp.task('css', function () {
     // .pipe(cssGlobbing())
     .pipe(sass().on('error', sass.logError))
     .pipe(concatCss("bundle.css"))
-    .pipe(autoprefixer({
-        browsers: ['last 15 versions'],
-        cascade: false
-    }))
+    // .pipe(autoprefixer({
+    //     browsers: ['last 15 versions'],
+    //     cascade: false
+    // }))
     // .pipe(minifyCSS())
     .pipe(rename("style.min.css"))
     .pipe(gulp.dest('app/css'));
