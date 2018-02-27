@@ -14,20 +14,10 @@
 
     console.log($(window).width());
 
-    // $('.course').filter(function(){
-
-    //   if ($(this).css('display') == 'none')
-    //   {
-    //     return false;
-    //   }
-
-    //   return true;
-
-    // })
     $('.' + wrapClassBlock + ':not(.' + wrapClassBlock + '-hidden)').each(function (index) {
 
-      // var $wrap = $(this).parent();
-      var divider = 2;
+      var divider = 2,
+          clearValue = 'none';
 
       console.log(index);
 
@@ -38,13 +28,10 @@
 
       if (index % divider === 0)
       {
-        $(this).css('clear', 'both');
+        clearValue = 'both';
       }
-      else
-      {
-        $(this).css('clear', 'none');
-        // $(this).removeAttr('style');
-      }
+      
+      $(this).css('clear', clearValue);
 
     });
   }

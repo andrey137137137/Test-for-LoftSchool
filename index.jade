@@ -7,83 +7,84 @@ head
 
   link(rel="stylesheet" href="css/style.min.css")
 
-  script(src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js")
+  <!--[if lt IE 9]> script(src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js") script(src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js")
+  <![endif]-->
 
 body
 
-  header.section.wide_container.header
+  .section.main_wrapper
+    header.section.wide_container.header
 
-    article.float.author
-      aside.img_wrap.author__logo_wrap
-        img.img_wrap__img(src="img/logo.jpg" alt="Логотип")
-      section.author__text_wrap
-        h2.title.section__title.author__title Быстров Борис Викторович
-        a.header__link(href="#") bystrov@gmail.com
+      article.float.author
+        aside.img_wrap.author__logo_wrap
+          img.img_wrap__img(src="img/logo.jpg" alt="Логотип")
+        section.author__text_wrap
+          h2.title.section__title.author__title Быстров Борис Викторович
+          a.header__link(href="#") bystrov@gmail.com
 
-    ul.float.float-right.socials
-      each item in ["github", "skype", "vk"]
-        li.socials__item
-          a(class="header__link socials__link socials__#{item}" href="#") #{item}
+      ul.float.float-right.socials
+        each item in ["github", "skype", "vk"]
+          li.socials__item
+            a(class="header__link socials__link socials__#{item}" href="#")
+              span.socials__title #{item}
 
-  section.section.about
-    .container
+    section.section.about
+      .container
 
-      h2.col.col_12.title.section__title.about__title О будущем ученике
-      p.col.col_12.section__desc.about__desc Ребятам из Loftschool будет полезно узнать немного обо мне
+        h2.col.col_12.title.section__title.about__title О будущем ученике
+        p.col.col_12.section__desc.about__desc Ребятам из Loftschool будет полезно узнать немного обо мне
 
-      - var study_info = [{id: 1, title: "Немного обо мне", description: "Я живу в Санкт-Петербурге (Россия). Мне 26 лет. Высшее образование - закончил НИУ ИТМО. Опыт в разработке 1 год. Уже окончил курсы в Академии Программирования, где не плохо научился верстать. Пока есть только один сайт, которым могу похвастаться: "}, {id: 2, title: "Мой опыт в разработке", description: "В этом блоке я расскажу о себе, что я уже умею. Здесь я укажу другие курсы, которые до этого я уже проходил. Могу перечислить технологии, которыми уже умею пользоваться. К примеру: html5, css3, sass, jade, git и пр."}]
+        - var study_info = [{id: 1, title: "Немного обо мне", description: "Я живу в Санкт-Петербурге (Россия). Мне 26 лет. Высшее образование - закончил НИУ ИТМО. Опыт в разработке 1 год. Уже окончил курсы в Академии Программирования, где не плохо научился верстать. Пока есть только один сайт, которым могу похвастаться: "}, {id: 2, title: "Мой опыт в разработке", description: "В этом блоке я расскажу о себе, что я уже умею. Здесь я укажу другие курсы, которые до этого я уже проходил. Могу перечислить технологии, которыми уже умею пользоваться. К примеру: html5, css3, sass, jade, git и пр."}]
 
-      mixin study_card(info)
-        .float_col.col_6.study_card_wrap
-          article.flex.card.study_card
-            aside.float.img_wrap.study_card__img_wrap
-              img.img_wrap__img.study_card__img(src="img/about-study/#{info.id}.png" alt="#{info.title}")
-            section.float.study_card__text_wrap
-              h3.title.card__title.study_card__title #{info.title}
-              p.card__desc.study_card__desc #{info.description}
-                if info.id == 1
-                  a.study_card__link(href="#") www.yandex.ru
+        mixin study_card(info)
+          .float_col.col_6.study_card_wrap
+            article.flex.card.study_card
+              aside.float.img_wrap.study_card__img_wrap
+                img.img_wrap__img.study_card__img(src="img/about-study/#{info.id}.png" alt="#{info.title}")
+              section.float.study_card__text_wrap
+                h3.title.card__title.study_card__title #{info.title}
+                p.card__desc.study_card__desc #{info.description}
+                  if info.id == 1
+                    a.study_card__link(href="#") www.yandex.ru
 
-      for info in study_info
-        +study_card(info)
+        for info in study_info
+          +study_card(info)
 
-  section.section.courses
-    div#courses.container
+    section.section.courses
+      div#courses.container
 
-      h1.col.col_12.title.section__title.courses__title Курсы на loftblog
-      p.col.col_12.section__desc.courses__desc которые мне помогут в выполнении этого задания
+        h1.col.col_12.title.section__title.courses__title Курсы на loftblog
+        p.col.col_12.section__desc.courses__desc которые мне помогут в выполнении этого задания
 
-      - var courses = [{id: 1, title: "Основы JavaScript", description: "Видеокурс о одном из самых популярных языков программирования - JavaScript. Изучая этот курс вы познаете этот прекрасный язык от самых основ.", time: {lessons: 24, hours: 6, minutes: 46}}, {id: 2, title: "Основы JQUERY", description: "Видеокурс о одном из самых популярных языков программирования - JavaScript. Изучая этот курс вы познаете этот прекрасный язык от самых основ.", time: {lessons: 11, hours: 2,   minutes: 6 }}, {id: 3, title: "Базовые элементы страницы", description: "Видеокурс по верстке и программированию основных и популярных элементов сайтов. Посмотрев этот курс вы научитесь создавать табы, аккордеон, слайдшоу, слайдер и т.д.", time: {lessons: 9, hours: 2, minutes: 7}}, {id: 4, title: "Создание адаптивных сайтов", description: "В этом курсе вы узнаете как создавать адаптивные сайты, что такое адаптивная верстка и дизайн.", time: {lessons: 7, hours: 2, minutes: 11}}, {id: 5, title: "Верстка адаптивной css галереи", description: "В этом видеокурсе вы изучите инструменты, техники и подходы для web-разработчика, которые помогут вам решать поставленные задачи более быстро и эффективно.", time: {lessons: 6, hours: 1, minutes: 9 }}]
+        - var courses = [{id: 1, title: "Основы JavaScript", description: "Видеокурс о одном из самых популярных языков программирования - JavaScript. Изучая этот курс вы познаете этот прекрасный язык от самых основ.", time: {lessons: 24, hours: 6, minutes: 46}}, {id: 2, title: "Основы JQUERY", description: "Видеокурс о одном из самых популярных языков программирования - JavaScript. Изучая этот курс вы познаете этот прекрасный язык от самых основ.", time: {lessons: 11, hours: 2,   minutes: 6 }}, {id: 3, title: "Базовые элементы страницы", description: "Видеокурс по верстке и программированию основных и популярных элементов сайтов. Посмотрев этот курс вы научитесь создавать табы, аккордеон, слайдшоу, слайдер и т.д.", time: {lessons: 9, hours: 2, minutes: 7}}, {id: 4, title: "Создание адаптивных сайтов", description: "В этом курсе вы узнаете как создавать адаптивные сайты, что такое адаптивная верстка и дизайн.", time: {lessons: 7, hours: 2, minutes: 11}}, {id: 5, title: "Верстка адаптивной css галереи", description: "В этом видеокурсе вы изучите инструменты, техники и подходы для web-разработчика, которые помогут вам решать поставленные задачи более быстро и эффективно.", time: {lessons: 6, hours: 1, minutes: 9 }}, {id: 6, title: "Верстка адаптивной css галереи", description: "В этом курсе мы разберем как сверстать адаптивную css галерею. Также познакомимся с Flexbox.", time: {lessons: 4, hours: 0, minutes: 50 }}]
 
-      mixin course_card(course)
-        .float_col.col_4.course_wrap
-          article.card.course
-            header.img_wrap.course__img_wrap
-              img.img_wrap__img(src="img/courses/#{course.id}.jpg" alt="#{course.title}")
-            section.course__text_wrap
-              h3.title.card__title.course__title #{course.title}
-              p.card__desc.course__desc #{course.description}
-              .course__time #{course.time.lessons} уроков (#{course.time.hours} часов #{course.time.minutes} минут)
-                //- if course.time.lessons > 4
-                //-   #{course.time.lessons} уроков
-                //- else if course.time.lessons > 1
-                //-   #{course.time.lessons} урока
-                //- else if course.time.lessons > 0
-                //-   #{course.time.lessons} урок
-            footer.course__checkbox_wrap
-              input.course__input(id="checkbox-#{course.id}" type="checkbox" value="#{course.id}")
-              label.course__label(for="checkbox-#{course.id}") Посмотрел
-            .course__foreground
+        mixin course_card(course)
+          .float_col.col_4.course_wrap
+            article.card.course
+              header.img_wrap.course__img_wrap
+                img.img_wrap__img(src="img/courses/#{course.id}.jpg" alt="#{course.title}")
+              section.course__text_wrap
+                h3.title.card__title.course__title #{course.title}
+                p.card__desc.course__desc #{course.description}
+                .course__time #{course.time.lessons} уроков (#{course.time.hours} часов #{course.time.minutes} минут)
+                  //- if course.time.lessons > 4
+                  //-   #{course.time.lessons} уроков
+                  //- else if course.time.lessons > 1
+                  //-   #{course.time.lessons} урока
+                  //- else if course.time.lessons > 0
+                  //-   #{course.time.lessons} урок
+              footer.course__checkbox_wrap
+                input.course__input(id="checkbox-#{course.id}" type="checkbox" value="#{course.id}")
+                label.course__label(for="checkbox-#{course.id}") Посмотрел
+              .course__foreground
 
-      for course in courses
-        +course_card(course)
+        for course in courses
+          +course_card(course)
 
-    h2#learned.container.title.section__title &nbsp;Задание выполнено
+      h2#learned.container.title.section__title &nbsp;Задание выполнено
 
   footer.section.wide_container.footer
     p.col.col_12.footer__desc А это футер, с текстом внутри. Он должен быть прибит к низу окна браузера,
     p.col.col_12.footer__desc не зависимо от количества контента на странице и размера окна.
 
   script(src="js/script.min.js")
-
-//- , {id: 6, title: "Верстка адаптивной css галереи", description: "В этом курсе мы разберем как сверстать адаптивную css галерею. Также познакомимся с Flexbox.", time: {lessons: 4, hours: 0, minutes: 50 }}

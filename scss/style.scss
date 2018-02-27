@@ -11,6 +11,12 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
 body {
   // position: relative;
   // padding-bottom: 72px;
@@ -22,434 +28,458 @@ body {
   // overflow-x: auto;
 }
 
+  $footerHeight: 72px;
+
   .section {
     // padding-top: 70px;
     overflow: hidden;
   }
 
-  .wide_container {
-    padding: 0 unquote($colMrg);
-  }
-
-  .wide_container,
-  .flex,
-  .container {
-    display: flex;
-    flex-flow: row wrap;
-    // justify-content: flex-start;
-    // align-items: flex-start;
-    // align-content: flex-end;
-    // padding: 0 $colMrg;
-    min-width: 320px;
-  }
-
-  .wide_container,
-  .float,
-  .float_col,
-  .container,
-  .flex
+  .main_wrapper
   {
+    position: relative;
+    min-height: 100%;
+
     &:after {
       display: block;
-      width: 100%;
-      clear: both;
+      height: $footerHeight;
       content: '';
     }
   }
 
-  a
-  {
-    &,
-    &:visited,
-    &:link,
-    &:hover {
-      outline-width: 0;
+    .wide_container {
+      padding: 0 unquote($colMrg);
     }
 
-    & {
-      transition: all .5s;
+    .wide_container,
+    .flex,
+    .container {
+      // display: flex;
+      // flex-flow: row wrap;
+      // justify-content: flex-start;
+      // align-items: flex-start;
+      // align-content: flex-end;
+      // padding: 0 $colMrg;
+      min-width: 320px;
     }
-  }
 
-  .header
-  {
-    position: relative;
-    justify-content: space-between;
-    z-index: 100000;
-    padding: 15px 30px 15px 29px;
-    // height: 90px;
-    color: $white;
-    background-color: $green;
-    box-shadow: 0 5px 5px $shadow;
-
-    &__link
+    .wide_container,
+    .float,
+    .float_col,
+    .container,
+    .flex
     {
-      color: inherit;
-      text-decoration: none;
-      opacity: .7;
-
-      &:hover {
-        opacity: 1;
-      }
-    }
-  }
-
-    .author,
-    .socials {
-      display: table;
-      margin: 0 auto;
-    }
-
-      .img_wrap
-      {
-        background-color: $lightBlack;
-        overflow: hidden;
-
-        &__img {
-          width: 100%;
-          max-width: 100%;
-          height: auto;
-          color: $white;
-        }
-      }
-
-      .title,
-      .section__desc {
-        line-height: 1.2;
-      }
-
-      .title {
+      &:after {
+        display: block;
         width: 100%;
-        // @include fontFamily;
+        clear: both;
+        content: '';
       }
+    }
 
-      .section__title,
-      .section__desc {
-        text-align: center;
-      }
-
-      .title,
-      .section__desc {
-        // font-size: 21px;
-        font-size: 1.5em;
-      }
-
-      .section__title {
-        // font-size: 42px;
-        font-size: 3em;
-        // font-weight: 500;
-        // for 'Open Sans'
-        font-weight: 600;
-        text-align: center;
-      }
-
-    .author
+    a
     {
-      &__logo_wrap,
-      &__text_wrap {
-        float: left;
+      &,
+      &:visited,
+      &:link,
+      &:hover {
+        outline-width: 0;
       }
 
-      &__logo_wrap {
-        margin-right: 20px;
-        border-radius: 50%;
-        border: 1px solid $white;
-        width: 60px;
-        height: 60px;
+      & {
+        transition: all .5s;
       }
-
-      &__text_wrap {
-        width: 165px;
-      }
-
-        &__title {
-          padding: 7px 0 1px;
-          // font-size: 21.26px;
-          font-size: 1.518571428571429em;
-          text-align: left;
-        }
     }
 
-    ul {
-      list-style: none inside;
-    }
-
-    .socials
+    .header
     {
-      padding-top: 12px;
-      // font: 35px/1 FontAwesome;
-      font: 2.5em/1 FontAwesome;
-
-      &__item
-      {
-        float: left;
-        margin-left: 20px;
-
-        &:first-child {
-          margin: 0;
-        }
-      }
-
-        &__link {
-          display: block;
-          width: 30px;
-          height: 35px;
-          overflow: hidden;
-        }
-
-        &__github:before {
-          content: '\f09b';
-        }
-
-        &__skype:before {
-          content: '\f17e';
-        }
-
-        &__vk
-        {
-          width: 38px;
-
-          &:before {
-            content: '\f189';
-          }
-        }
-    }
-
-  .container {
-    margin: 0 auto;
-    // width: 100%;
-    max-width: 960px;
-    // outline: 1px solid #070;
-  }
-
-    .section__desc {
-      font-weight: 200;
-    }
-
-    .card
-    {
-      // margin-left: 10px;
-      // margin-right: 10px;
-
-      &__title {
-        margin-bottom: 8px;
-        font-weight: 400;
-        color: $lightBlack;
-      }
-      &__desc {
-        overflow-x: auto;
-      }
-    }
-
-  .about
-  {
-    padding: 70px 0 96px;
-    // height: 473px;
-    background-color: $white;
-
-    &__title {
       position: relative;
-      top: 0;
-      text-align: center;
-      color: $lightBlack;
-    }
+      justify-content: space-between;
+      z-index: 100000;
+      padding: 15px 30px 15px 29px;
+      // height: 90px;
+      color: $white;
+      background-color: $green;
+      box-shadow: 0 5px 5px $shadow;
 
-    &__desc {
-      margin-top: 14px;
-    }
-  }
-
-    .study_card_wrap {
-      margin-top: 37px;
-    }
-
-      .study_card
+      &__link
       {
-        // padding-left: 160px;
-        // width: 460px;
+        color: inherit;
+        text-decoration: none;
+        opacity: .7;
 
-        &__img_wrap
-        {
-          width: 100%;
-          height: 145px;
-          background: none;
+        &:hover {
+          opacity: 1;
         }
+      }
+    }
+
+      .author,
+      .socials {
+        display: table;
+        margin: 0 auto;
+      }
+
+        .img_wrap
+        {
+          background-color: $lightBlack;
+          overflow: hidden;
 
           &__img {
-            display: table;
-            margin: 0 auto;
-            width: auto;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            color: $white;
           }
-
-          &__title {
-            // margin-bottom: 8px;
-            text-align: center;
-          }
-
-          &__desc {
-            text-align: justify;
-          }
-
-            &__link {
-              text-decoration: underline;
-              color: #03a9f4;
-            }
-      }
-
-  .courses
-  {
-    padding: 73px 0 82px;
-    // height: 1239px;
-    // background: #f4f5f2 url(../img/bg/courses.png);
-
-    &__title {
-      color: $lightBlack;
-    }
-
-    &__desc {
-      margin-top: 13px;
-      margin-bottom: 20px;
-    }
-  }
-
-    .course_wrap-hidden
-    {
-      display: none;
-
-      // &:nth-child(1n) {
-      //   clear: none;
-      // }
-    }
-
-      .course
-      {
-        position: relative;
-        margin-top: 23px;
-        // width: 300px;
-        background-color: $white;
-        box-shadow: 0 1px 5px $shadow;
-        overflow: hidden;
-        // cursor: pointer;
-
-        $course: &;
-
-        &__time,
-        &__label {
-          background-image: url(../img/bg/sprite.png);
-          background-repeat: no-repeat;
         }
 
-        &__img_wrap {
-          height: 170px;
+        .title,
+        .section__desc {
+          line-height: 1.2;
+        }
+
+        .title {
+          width: 100%;
+          // @include fontFamily;
+        }
+
+        .section__title,
+        .section__desc {
+          text-align: center;
+        }
+
+        .title,
+        .section__desc {
+          // font-size: 21px;
+          font-size: 1.5em;
+        }
+
+        .section__title {
+          // font-size: 42px;
+          font-size: 3em;
+          // font-weight: 500;
+          // for 'Open Sans'
+          font-weight: 600;
+          text-align: center;
+        }
+
+      .author
+      {
+        &__logo_wrap,
+        &__text_wrap {
+          float: left;
+        }
+
+        &__logo_wrap {
+          margin-right: 20px;
+          border-radius: 50%;
+          border: 1px solid $white;
+          width: 60px;
+          height: 60px;
         }
 
         &__text_wrap {
-          padding: 18px 21px 15px;
+          width: 165px;
         }
+
+          &__title {
+            padding: 7px 0 1px;
+            // font-size: 21.26px;
+            font-size: 1.518571428571429em;
+            text-align: left;
+          }
+      }
+
+      ul {
+        list-style: none inside;
+      }
+
+      .socials
+      {
+        padding-top: 12px;
+        // font: 35px/1 FontAwesome;
+        font: 2.5em/1 FontAwesome;
+
+        &__item
+        {
+          float: left;
+          margin-left: 20px;
+
+          &:first-child {
+            margin: 0;
+          }
+        }
+
+          &__link
+          {
+            display: block;
+            // width: 30px;
+            width: 0.8571428571428571em;
+            // height: 35px;
+            height: 1em;
+            overflow: hidden;
+          }
+
+            &__github:before {
+              content: '\f09b';
+            }
+
+            &__skype:before {
+              content: '\f17e';
+            }
+
+          &__vk
+          {
+            // width: 38px;
+            width: 1.266666666666667em;
+
+            &:before {
+              content: '\f189';
+            }
+          }
+
+            &__title {
+              display: none;
+            }
+      }
+
+    .container {
+      margin: 0 auto;
+      // width: 100%;
+      max-width: 960px;
+      // outline: 1px solid #070;
+    }
+
+      .section__desc {
+        font-weight: 200;
+      }
+
+      .card
+      {
+        // margin-left: 10px;
+        // margin-right: 10px;
 
         &__title {
-          line-height: 24px;
-          transition: color .5s;
+          margin-bottom: 8px;
+          font-weight: 400;
+          color: $lightBlack;
         }
-
-        // &__desc {
-        //   margin-bottom: 8px;
-        // }
-
-        &__time {
-          margin-top: 10px;
-          margin-left: -1px;
-          padding-left: 16px;
-          color: #b6b6b6;
-          background-position: -2px -47px;
-        }
-
-        &__checkbox_wrap {
-          display: block;
-          padding: 20px 20px 19px;
-          height: 59px;
-          background-color: #f5f5f5;
-        }
-
-          &__input {
-            display: none;
-          }
-
-          &__label {
-            display: block;
-            padding-top: 1px;
-            padding-left: 39px;
-            height: 20px;
-            font-weight: 400;
-            // font-size: 18px;
-            // line-height: 20px;
-            font-size: 1.285714285714286em;
-            line-height: 1.111111111111111;
-            background-position: -2px -2px;
-            transition: all .5s;
-            cursor: pointer;
-          }
-
-          &__input:checked + &__label {
-            color: $green;
-            background-position: -2px -26px;
-          }
-
-        &__foreground {
-          position: absolute;
-          top: 165px;
-          left: -100%;
-          width: 100%;
-          height: 5px;
-          background-color: $green;
-          transition: all .5s;
-        }
-
-        &-active
-        {
-          #{$course}__title {
-            color: $green;
-          }
-
-          #{$course}__foreground {
-            left: 0;
-          }
-        }
-
-        &-learned
-        {
-          box-shadow: 0 0 0 #000;
-
-          #{$course}__foreground {
-            top: 0;
-            left: 0;
-            height: 100%;
-            opacity: .2;
-          }
+        &__desc {
+          overflow-x: auto;
         }
       }
 
-  #learned
-  {
-    display: none;
-    padding-top: 511px;
-    height: 1084px;
-    color: $green;
+    .about
+    {
+      padding: 70px 0 96px;
+      // height: 473px;
+      background-color: $white;
 
-    &:before {
-      font-family: FontAwesome;
-      // font-size: 35px;
-      font-size: 0.8333333333333333em;
-      content: '\f00c';
+      &__title {
+        position: relative;
+        top: 0;
+        text-align: center;
+        color: $lightBlack;
+      }
+
+      &__desc {
+        margin-top: 14px;
+      }
     }
-  }
+
+      .study_card_wrap {
+        margin-top: 37px;
+      }
+
+        .study_card
+        {
+          // padding-left: 160px;
+          // width: 460px;
+
+          &__img_wrap
+          {
+            width: 100%;
+            height: 145px;
+            background: none;
+          }
+
+            &__img {
+              display: table;
+              margin: 0 auto;
+              width: auto;
+            }
+
+            &__title {
+              // margin-bottom: 8px;
+              text-align: center;
+            }
+
+            &__desc {
+              text-align: justify;
+            }
+
+              &__link {
+                text-decoration: underline;
+                color: #03a9f4;
+              }
+        }
+
+    .courses
+    {
+      padding: 73px 0 82px;
+      // height: 1239px;
+      // background: #f4f5f2 url(../img/bg/courses.png);
+
+      &__title {
+        color: $lightBlack;
+      }
+
+      &__desc {
+        margin-top: 13px;
+        margin-bottom: 20px;
+      }
+    }
+
+      .course_wrap-hidden
+      {
+        display: none;
+
+        // &:nth-child(1n) {
+        //   clear: none;
+        // }
+      }
+
+        .course
+        {
+          position: relative;
+          margin-top: 23px;
+          // width: 300px;
+          background-color: $white;
+          box-shadow: 0 1px 5px $shadow;
+          overflow: hidden;
+          // cursor: pointer;
+
+          $course: &;
+
+          &__time,
+          &__label {
+            background-image: url(../img/bg/sprite.png);
+            background-repeat: no-repeat;
+          }
+
+          &__img_wrap {
+            height: 170px;
+          }
+
+          &__text_wrap {
+            padding: 18px 21px 15px;
+          }
+
+          &__title {
+            line-height: 24px;
+            transition: color .5s;
+          }
+
+          // &__desc {
+          //   margin-bottom: 8px;
+          // }
+
+          &__time {
+            margin-top: 10px;
+            margin-left: -1px;
+            padding-left: 16px;
+            color: #b6b6b6;
+            background-position: -2px -47px;
+          }
+
+          &__checkbox_wrap {
+            display: block;
+            padding: 20px 20px 19px;
+            height: 59px;
+            background-color: #f5f5f5;
+          }
+
+            &__input {
+              display: none;
+            }
+
+            &__label {
+              display: block;
+              padding-top: 1px;
+              padding-left: 39px;
+              height: 20px;
+              font-weight: 400;
+              // font-size: 18px;
+              // line-height: 20px;
+              font-size: 1.285714285714286em;
+              line-height: 1.111111111111111;
+              background-position: -2px -2px;
+              transition: all .5s;
+              cursor: pointer;
+            }
+
+            &__input:checked + &__label {
+              color: $green;
+              background-position: -2px -26px;
+            }
+
+          &__foreground {
+            position: absolute;
+            top: 165px;
+            left: -100%;
+            width: 100%;
+            height: 5px;
+            background-color: $green;
+            transition: all .5s;
+          }
+
+          &-active
+          {
+            #{$course}__title {
+              color: $green;
+            }
+
+            #{$course}__foreground {
+              left: 0;
+            }
+          }
+
+          &-learned
+          {
+            box-shadow: 0 0 0 #000;
+
+            #{$course}__foreground {
+              top: 0;
+              left: 0;
+              height: 100%;
+              opacity: .2;
+            }
+          }
+        }
+
+    #learned
+    {
+      display: none;
+      padding-top: 511px;
+      height: 1084px;
+      color: $green;
+
+      &:before {
+        font-family: FontAwesome;
+        // font-size: 35px;
+        font-size: 0.8333333333333333em;
+        content: '\f00c';
+      }
+    }
 
   .footer {
-    // position: fixed;
+    position: relative;
     // bottom: 0;
+    margin-top: -$footerHeight;
     padding: 15px unquote($colMrg);
-    // width: 100%;
+    width: 100%;
     // height: 72px;
+    height: $footerHeight;
     text-align: center;
     background-color: $lightBlack;
   }
