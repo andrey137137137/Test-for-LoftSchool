@@ -7,7 +7,7 @@ var gulp = require('gulp'),
     rename = require("gulp-rename"),
     minifyCSS = require('gulp-minify-css'),
     notify = require("gulp-notify"),
-    jade = require('gulp-jade');
+    pug = require('gulp-pug');
 
 // gulp.task('connect', function () {
 //   connect.server({
@@ -31,8 +31,8 @@ var gulp = require('gulp'),
 gulp.task('html', function () {
   var YOUR_LOCALS = {};
 
-  return gulp.src('index.jade')
-    .pipe(jade({
+  return gulp.src('index.pug')
+    .pipe(pug({
       locals: YOUR_LOCALS,
       pretty: true
     }))
@@ -63,7 +63,7 @@ gulp.task('js', function () {
 })
 
 gulp.task('watch', function () {
-  gulp.watch('index.jade', ['html']);
+  gulp.watch('index.pug', ['html']);
   gulp.watch('scss/*.scss', ['css']);
   gulp.watch('js/*.js', ['js']);
 });
